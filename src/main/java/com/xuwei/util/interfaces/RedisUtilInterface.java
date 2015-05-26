@@ -40,31 +40,35 @@ public interface RedisUtilInterface {
 	
 	public Boolean hexists(byte[] key,byte[] filed) ;
 	
-	public Long hset(String key,String field,String value);
-	
 	public Long hset(byte[] key,byte[] field,byte[] value);
 	
-	public Long hset(String key,String field,String value,int expire);
 	public Long hset(byte[] key,byte[] field,byte[] value,int expire);
-
+	
 	public Object hget(byte[] key,byte[] field);
 	
-	public String hget(String key,String field);
-	
-	public String hget(String key,String field,int expire);
 	public Object hget(byte[] key,byte[] field,int expire);
 	
-	public String hmset(String key,Map<String,String> map);
 	public String hmset(byte[] key,Map<byte[],byte[]> map);
-	public String hmset(String key,Map<String,String> map,int expire);
 	
 	public String hmset(byte[] key,Map<byte[],byte[]> map,int expire);
 	
 	public List<Object> hmget(byte[] key, int expire , byte[]... fields);
 	
-	public Long hdel(String key,String ... field);
-	
 	public Long hdel(byte[] key,byte[] ... field);
+	
+	public Long hset(String key,String field,String value);
+	
+	public Long hset(String key,String field,String value,int expire);
+	
+	public String hget(String key,String field);
+	
+	public String hget(String key,String field,int expire);
+	
+	public String hmset(String key,Map<String,String> map);
+	
+	public String hmset(String key,Map<String,String> map,int expire);
+	
+	public Long hdel(String key,String ... field);
 	
 
 }
