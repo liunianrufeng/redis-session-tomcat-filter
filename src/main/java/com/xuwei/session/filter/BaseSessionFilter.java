@@ -11,7 +11,6 @@
 package com.xuwei.session.filter;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -33,7 +32,7 @@ import com.xuwei.servlet.RedisServletRequest;
 import com.xuwei.session.manager.DefaultSessionManager;
 import com.xuwei.session.manager.RedisSessionManager;
 import com.xuwei.util.SessionConfig;
-import com.xuwei.util.SessionRedisUtil;
+import com.xuwei.util.SessionRedisClusterUtil;
 
 /**
  * 
@@ -61,8 +60,8 @@ public abstract class BaseSessionFilter implements Filter{
 	 */
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		JedisCluster jedisCluster = initJedisCluster();
-		SessionRedisUtil.getInstance(jedisCluster);
+		/*JedisCluster jedisCluster = initJedisCluster();
+		SessionRedisClusterUtil.getInstance(jedisCluster);*/
 		sessionManager = new DefaultSessionManager();
 		//ServletContext servletContext = filterConfig.getServletContext();
 		setSessionListener(filterConfig, sessionManager);
@@ -112,6 +111,8 @@ public abstract class BaseSessionFilter implements Filter{
 	 * @exception 
 	 * @since  1.0.0
 	 */
+	@SuppressWarnings("unused")
+	@Deprecated
 	private JedisCluster initJedisCluster(){
 		try {
 			String clusters = SessionConfig.getValue("redis_cluster.host");

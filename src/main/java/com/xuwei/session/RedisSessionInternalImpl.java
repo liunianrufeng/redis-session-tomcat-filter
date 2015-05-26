@@ -9,8 +9,9 @@ import javax.servlet.http.HttpSessionContext;
 
 import com.xuwei.servlet.RedisServletRequest;
 import com.xuwei.session.manager.RedisSessionManager;
+import com.xuwei.util.RedisUtilInstanceUtil;
 import com.xuwei.util.SerializeUtils;
-import com.xuwei.util.SessionRedisUtil;
+import com.xuwei.util.interfaces.RedisUtilInterface;
 
 /**
  * 
@@ -58,7 +59,7 @@ public class RedisSessionInternalImpl implements RedisSessionInternal {
 	/**
 	 * 
 	 */
-	private SessionRedisUtil redisUtil = SessionRedisUtil.getInstance();
+	private RedisUtilInterface redisUtil = RedisUtilInstanceUtil.getRedisUtilInterfaceInstance();
 	
 	/**
 	 * redis session属性名称集合对应后缀名

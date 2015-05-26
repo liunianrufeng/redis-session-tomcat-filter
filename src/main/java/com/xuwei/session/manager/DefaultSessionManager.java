@@ -18,9 +18,10 @@ import com.xuwei.servlet.RedisServletRequest;
 import com.xuwei.session.BaseSessionData;
 import com.xuwei.session.RedisSessionInternal;
 import com.xuwei.session.RedisSessionInternalImpl;
+import com.xuwei.util.RedisUtilInstanceUtil;
 import com.xuwei.util.SerializeUtils;
 import com.xuwei.util.SessionConfig;
-import com.xuwei.util.SessionRedisUtil;
+import com.xuwei.util.interfaces.RedisUtilInterface;
 
 /**
  * 
@@ -84,7 +85,7 @@ public class DefaultSessionManager implements RedisSessionManager {
 	/**
 	 * 
 	 */
-	private SessionRedisUtil redisUtil = SessionRedisUtil.getInstance();
+	private RedisUtilInterface redisUtil = RedisUtilInstanceUtil.getRedisUtilInterfaceInstance();
 
 
 	/**
@@ -277,6 +278,7 @@ public class DefaultSessionManager implements RedisSessionManager {
 		this.cookiePath = SessionConfig.getValue("cookie.path");
 		this.cookieMaxAge = Integer.valueOf(SessionConfig.getValue("cookie.maxAge"));
 	}
+	
 	
 	
 }
