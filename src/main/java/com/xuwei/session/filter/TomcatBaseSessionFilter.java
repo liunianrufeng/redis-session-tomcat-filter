@@ -18,9 +18,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSessionAttributeListener;
 import javax.servlet.http.HttpSessionListener;
 
-import org.terracotta.session.util.Expression;
-
 import com.xuwei.session.manager.RedisSessionManager;
+import com.xuwei.util.Expression;
 
 /**
  * 
