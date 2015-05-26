@@ -100,11 +100,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 			<version>7.0.5</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- <dependency>
-			<groupId>com.xuwei</groupId>
-			<artifactId>redis-filter-session-api</artifactId>
-			<version>1.1.0-SNAPSHOT</version>
-		</dependency> -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	
 	<build>
