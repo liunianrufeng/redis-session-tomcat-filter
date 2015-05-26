@@ -46,7 +46,7 @@ public class RedisUtilInstanceUtil {
 		return redisUtilInterface;
 	}
 	
-	private static void initJedis(){
+	private synchronized static void initJedis(){
 		try {
 			String clusters = SessionConfig.getValue("redis_cluster.host");
 			if(StringUtils.isEmpty(clusters)){
